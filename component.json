@@ -1,0 +1,51 @@
+{
+    "title": "Twitter APIs with Word2Vec query expansion",
+    "description": "Call Twitter APIs with word2vec query expansion.<BR />[Endpoint] https://api.apitore.com/api/24",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/apitore.com/twitterApisWithWord2vecQueryExpansion/0.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.apitore.com/api/24",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "searchUsingGET_2": {
+            "main": "./lib/actions/searchUsingGET_2.js",
+            "title": "Search tweets.",
+            "description": "Tweets search API with Word2Vec query expansion.<BR />Response<BR />&nbsp; Github: <a href=\"https://github.com/keigohtr/apitore-response-parent/tree/master/twitter-response\">twitter-response</a><BR />&nbsp; Class: com.apitore.banana.response.twitter.TwitterResponseEntity<BR />",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchUsingGET_2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
